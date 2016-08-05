@@ -661,14 +661,14 @@ export class Position extends vscode.Position {
   }
 
   public tilForwards(char: string, count: number = 1): Position | null {
-    const position = this.findHelper(char, count, +1);
+    const position = this.findHelper(char, count, +2);
     if (!position) { return null; }
 
     return new Position(this.line, position.character - 1);
   }
 
   public tilBackwards(char: string, count: number = 1): Position | null {
-    const position = this.findHelper(char, count, -1);
+    const position = this.findHelper(char, count, -2);
     if (!position) { return null; }
 
     return new Position(this.line, position.character + 1);

@@ -221,6 +221,13 @@ suite("Motions in Normal Mode", () => {
   });
 
   newTest({
+    title: "Can handle '2f'",
+    start: ['text tex|t'],
+    keysPressed: '^2ft',
+    end: ['text |text']
+  });
+
+  newTest({
     title: "Can handle 'F'",
     start: ['text tex|t'],
     keysPressed: '$Ft',
@@ -235,6 +242,13 @@ suite("Motions in Normal Mode", () => {
   });
 
   newTest({
+    title: "Can handle '2F'",
+    start: ['text tex|t'],
+    keysPressed: '$2Ft',
+    end: ['tex|t text']
+  });
+
+  newTest({
     title: "Can handle 't'",
     start: ['text tex|t'],
     keysPressed: '^tt',
@@ -243,9 +257,16 @@ suite("Motions in Normal Mode", () => {
 
   newTest({
     title: "Can handle 't' twice",
-    start: ['text tex|t'],
-    keysPressed: '^tttt',
-    end: ['te|xt text']
+    start: ['|abcde abcde'],
+    keysPressed: 'tdtd',
+    end: ['abcde ab|cde']
+  });
+
+  newTest({
+    title: "Can handle '2t'",
+    start: ['|abcde abcde'],
+    keysPressed: '2td',
+    end: ['abcde ab|cde']
   });
 
   newTest({
@@ -257,9 +278,16 @@ suite("Motions in Normal Mode", () => {
 
   newTest({
     title: "Can handle 'T' twice",
-    start: ['text tex|t'],
-    keysPressed: '$TtTt',
-    end: ['text t|ext']
+    start: ['abcde abcd|e'],
+    keysPressed: '$TaTa',
+    end: ['a|bcde abcde']
+  });
+
+  newTest({
+    title: "Can handle '2T'",
+    start: ['abcde abcd|e'],
+    keysPressed: '$2Ta',
+    end: ['a|bcde abcde']
   });
 
   newTest({
